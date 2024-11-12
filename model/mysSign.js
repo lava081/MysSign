@@ -62,7 +62,7 @@ export default class MysSign extends Base {
     if (userSign[this.e.user_id]) delete userSign[this.e.user_id]
 
     if (sendMsg.length > 3) {
-      this.e.bot.sendForwardMessage(this.e.contact, common.makeForward(sendMsg))
+      this.e.bot.sendForwardMessage(this.e.contact, common.makeForward(sendMsg), this.e.message_id)
     } else {
       this.e.reply(sendMsg.join('\n'), { at: true })
     }
